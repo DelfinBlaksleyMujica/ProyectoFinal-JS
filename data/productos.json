@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "nombre":"REMERA ACTIVA 1",
+        "precio":2800,
+        "img":"../img/remera1Activa.png"
+    },
+    {
+        "id":2,
+        "nombre":"REMERA ACTIVA 2",
+        "precio":3200,
+        "img":"../img/remera2Activa.png"
+    },
+    {
+        "id":3,
+        "nombre":"REMERA ACTIVA 3",
+        "precio":3500,
+        "img":"../img/remera3Activa.png"
+    },
+    {
+        "id":4,
+        "nombre":"BUZO ACTIVA 1",
+        "precio":6800,
+        "img":"../img/buzo1Activa.png"
+    },
+    {
+        "id":5,
+        "nombre":"BUZO ACTIVA 2",
+        "precio":7500,
+        "img":"../img/buzo2Activa.png"
+    },
+    {
+        "id":6,
+        "nombre":"BUZO ACTIVA 3",
+        "precio":9800,
+        "img":"../img/buzo3Activa.png"
+    },
+    {
+        "id":7,
+        "nombre":"PERLAS ACTIVA",
+        "precio":14700,
+        "img":"../img/perlasActiva.png"
+    },
+    {
+        "id":8,
+        "nombre":"COLGANTE ACTIVA",
+        "precio":10000,
+        "img":"../img/colganteActiva.png"
+    }
+]
