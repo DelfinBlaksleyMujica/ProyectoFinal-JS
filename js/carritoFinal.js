@@ -18,19 +18,23 @@ function calcularSubtotal () {
     return valorSubtotal;
 }
 
-function removeFromCart (id , qty = 0) {
+function calcularTotal(valor) {
+    return parseFloat(valor * 1.21);
+}
+
+function guardarValorEnLS (clave,valor) {
+    localStorage.setItem(clave,JSON.stringify(valor));
+}
+
+
+
+function removeFromCart (id) {
     for (let index = 0; index < carrito.length; index++) {
         if (carrito[index].id === id) {
-            if(qty > 0) {
-                carrito[index].qty -= qty
-            }
-            if (carrito[index].qty < 1 || qty === 0 ) {
-                carrito.splice(index, 1)
-            }
+        carrito.splice(index, 1)
         productoInfoContainer.innerHTML = ""; 
         localStorage.setItem("Carrito de compra",JSON.stringify(carrito));   
         showItems()
-        console.log(carrito);
         return     
         }
     }
@@ -39,9 +43,9 @@ function removeFromCart (id , qty = 0) {
 const carritoSubtotalContainer = document.getElementById("carritoFinal__productosSubtotal__container");
 
 
-function showSubtotal(carrito) {
+function showTotal(carrito) {
     html = `<div>
-            <p>Total :$ ${calcularSubtotal(carrito)} </p>
+            <p>Total :$ ${calcularTotal(calcularSubtotal(carrito))} </p>
             </div>`
 
     carritoSubtotalContainer.innerHTML = html;
@@ -50,17 +54,17 @@ function showSubtotal(carrito) {
 
 function showItems () {
     for (const producto of carrito) {
-
-    
+        const {id,nombre,precio,img} = producto
+        
     html = `
     <ul class="compraFinal__informacionProducto__container">
-            <li>${contador(producto)}</li>
-            <li>${producto.nombre}</li>
-            <li><img src="${producto.img}"/></li>
-            <li>$${producto.precio}</li>
+            <li>${contador(producto)})</li>
+            <li>${nombre}</li>
+            <li><img src="${img}"/></li>
+            <li>$${precio}</li>
             <li>
                 <div>
-                <button type ="button" onClick = "removeFromCart(${producto.id})" class="btnEliminar" value="Eliminar">Eliminar</button>
+                <button type ="button" onClick = "removeFromCart(${id})" class="btnEliminar" value="Eliminar">Eliminar</button>
                 </div>
             </li>
             
@@ -73,7 +77,7 @@ function showItems () {
     productoInfoContainer.innerHTML += html;
 }
 
-showSubtotal();
+showTotal();
 
 }
 
@@ -88,7 +92,7 @@ showItems();
 const informacionDePagoContainer = document.getElementById("carritoFinal__tarjeta__container");
 
 
-calcularSubtotal(carrito);
+calcularTotal(calcularSubtotal(carrito));
 
 
 
@@ -162,6 +166,7 @@ carrito.length == 0 ? btnConfirmarCompra.disabled = true : btnConfirmarCompra.di
 
 btnConfirmarCompra.addEventListener("click", (e) => {
     e.preventDefault();
+    guardarValorEnLS("ValorDeCompra",calcularTotal(calcularSubtotal(carrito)));
     vaciarCarrito(carrito);
     validarDatos();
 })

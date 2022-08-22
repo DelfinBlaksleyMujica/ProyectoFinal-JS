@@ -66,14 +66,18 @@ btnRegistrarse.addEventListener("click", async () => {
         contrasenia = document.getElementById('swal-input7').value,
         ]
     }
-    })
+    }).then((result) => {
+        if ((result.isConfirmed) && (nombre != "") && (email != "") && (edad != "") && (sexo != "") && (barrio != "") && (nombreDeUsuario != "") && (contrasenia != "")) {
+            cargarUsuario(crearUsuario(nombre,email,edad,sexo,barrio,nombreDeUsuario,contrasenia));
+            guardarLocal("Suscriptores", JSON.stringify(usuarios));
+            console.log(usuarios);
+            Swal.fire({
+                title:"¡Registrado exitosamente!",
+                icon: 'success',
+            })
 
-
-    if ((nombre != "") && (email != "") && (edad != "") && (sexo != "") && (barrio != "") && (nombreDeUsuario != "") && (contrasenia != "")) {
-        cargarUsuario(crearUsuario(nombre,email,edad,sexo,barrio,nombreDeUsuario,contrasenia));
-        guardarLocal("Suscriptores", JSON.stringify(usuarios));
-        console.log(usuarios);
-    }else{
+        }
+        else{
         Swal.fire({
             icon: 'error',
             title: '¡Todos los campos deben estar completos!',
@@ -84,6 +88,11 @@ btnRegistrarse.addEventListener("click", async () => {
             hideClass: {
                 popup: 'animate__animated animate__fadeOutUp'
             }
-            })
-    }
+            })}
 });
+})
+
+
+
+        
+    

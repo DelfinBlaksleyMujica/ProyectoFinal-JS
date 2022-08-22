@@ -11,7 +11,8 @@ btnIngresoSinRegistro = document.querySelector("#btnNoRegistrarse");
 
 function iniciarSesion(usuario){
     let userFound = usuario.find((usuario) => {
-        return usuario.nombreDeUsuario == user.value && usuario.contrasenia == pass.value;
+        const {nombreDeUsuario,contrasenia} = usuario
+        return nombreDeUsuario == user.value && contrasenia == pass.value;
     })
     if (userFound) {
         sessionStorage.setItem("Usuario en sesion",JSON.stringify(usuario));

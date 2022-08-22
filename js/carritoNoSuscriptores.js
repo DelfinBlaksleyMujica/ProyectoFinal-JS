@@ -57,25 +57,26 @@ const armarCards = async () => {
     })
 
     let html = catalogo.map ( (producto) => {
+        const {id,nombre,precio,img} = producto
         return (
             `
             <div class="">
                 <div class="card">
                     <div class="card-image">
     
-                        <img src="${producto.img}">
+                        <img src="${img}">
                     
                     </div>
             
                     <div class="card-content">
             
-                        <span class="card-title">${producto.nombre.toUpperCase()}</span>
-                        <p>$${producto.precio}</p>
+                        <span class="card-title">${nombre.toUpperCase()}</span>
+                        <p>$${precio}</p>
             
                     </div>
                 
                     <div class="card-action">
-                        <button type="button"   onClick="addToCartNoSuscriptores(${producto.id})" class="btnComprar" value="Comprar">Comprar</button>
+                        <button type="button"   onClick="addToCartNoSuscriptores(${id})" class="btnComprar" value="Comprar">Comprar</button>
                     </div>
     
                 </div>
@@ -118,25 +119,26 @@ search.addEventListener("keyup" , (e) => {
     cardsContainer.innerHTML = "";
     let filtro = filtrarProductos(search.value.toUpperCase());
     let html = filtro.map ( (producto) => {
+        const {id,nombre,precio,img} = producto
         return (
             `
             <div class="">
                 <div class="card">
                     <div class="card-image">
     
-                        <img src="${producto.img}">
+                        <img src="${img}">
                     
                     </div>
             
                     <div class="card-content">
             
-                        <span class="card-title">${producto.nombre.toUpperCase()}</span>
-                        <p>$${producto.precio}</p>
+                        <span class="card-title">${nombre.toUpperCase()}</span>
+                        <p>$${precio}</p>
             
                     </div>
                 
                     <div class="card-action">
-                        <button type="button"   onClick="addToCartNoSuscriptores(${producto.id})" class="btnComprar" value="Comprar">Comprar</button>
+                        <button type="button"   onClick="addToCartNoSuscriptores(${id})" class="btnComprar" value="Comprar">Comprar</button>
                     </div>
     
                 </div>
