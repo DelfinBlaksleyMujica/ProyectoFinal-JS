@@ -1,0 +1,200 @@
+//Generales
+
+
+/*Logo menu de navegacion*/
+
+@media (max-width:1024px) {
+    .navBar .menuDeNavegacion li a {
+        font-size:1.1rem;
+    }
+}
+
+@media (max-width:768px) {
+    .navBar .menuDeNavegacion li a {
+        font-size:0.9rem;
+    }
+}
+
+@media (max-width:555px) {
+    .navBar .menuDeNavegacion li a {
+        font-size:0.7rem;
+    }
+}
+
+
+@media (max-width:1024px) {
+    .logoMenuDeNavegacion__container a img {
+    width: 100px;
+    height: 100px;
+}
+}
+
+@media (max-width:768px) {
+    .logoMenuDeNavegacion__container a img {
+    width: 80px;
+    height: 80px;
+}
+}
+
+@media (max-width:555px) {
+    .logoMenuDeNavegacion__container a img {
+    width: 60px;
+    height: 60px;
+}
+}
+
+
+
+
+
+/*Index*/
+
+
+@media (max-width:480px) {
+    .index__container {
+    display: grid;
+    grid-template-columns: 0.1fr 3fr 0.1fr;
+    grid-template-rows: 0.4fr 0.6fr 2.7fr 0.3fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: 
+        "index__margin___left navBar__container index__margin__right" 
+        "index__margin___left index__titulo__container index__margin__right" 
+        "index__margin___left index__main__container index__margin__right" 
+        "index__margin___left footer index__margin__right";
+    }
+}
+
+/*Titulo principal*/
+
+@media (max-width:1024px) {
+    .index__titulo__container h1{
+        font-size:2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .index__titulo__container h1{
+        font-size:1.8rem;
+    }
+}
+
+@media (max-width:555px) {
+    .index__titulo__container h1{
+        font-size:1.5rem;
+    }
+}
+
+
+/*Botones Ingreso*/
+
+
+@media (max-width:1024px) {
+    .botonNoRegistrarse__container input{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:768px) {
+    .botonNoRegistrarse__container input{
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width:555px) {
+    .botonNoRegistrarse__container input{
+        font-size: 0.65rem;
+    }
+}
+
+
+/*Label de los input del formulario*/
+
+
+@media (max-width:1024px) {
+    .box label{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:768px) {
+    .box label{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:555px) {
+    .box label{
+        font-size: 0.9rem;
+    }
+}
+
+
+/*input del formulario de ingreso de usuario*/
+
+@media (max-width:1024px) {
+    .box input{
+        width:45%;
+        height:2.7rem;
+    }
+}
+
+@media (max-width:768px) {
+    .box input{
+        width:40%;
+        height:2.3rem;
+        font-size:1.2rem;
+    }
+}
+
+@media (max-width:555px) {
+    .box input{
+        height:2.1rem;
+        font-size: 1rem;
+    }
+}
+
+/*tamañano de letras del texto dentro de los inputs*/
+
+  
+@media (max-width:1024px) {
+    .form__botones__container div input{
+      font-size:1rem;
+    }
+  }
+  
+  @media (max-width:768px) {
+    .form__botones__container div input{
+      font-size:0.85rem;
+    }
+  }
+  
+  @media (max-width:555px) {
+    .form__botones__container div input{
+      font-size:0.65rem;
+    }
+  }
+  
+  
+
+  /*tamañano texto final del index*/
+
+  @media (max-width:1024px) {
+    .index__main__texto p{
+      font-size:1.3rem;
+    }
+  }
+  
+  @media (max-width:768px) {
+    .index__main__texto p{
+      font-size:1.1rem;
+    }
+  }
+  
+  @media (max-width:555px) {
+    .index__main__texto p{
+      font-size:0.9rem;
+    }
+  }
+  

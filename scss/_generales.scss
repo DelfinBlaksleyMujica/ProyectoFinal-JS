@@ -1,0 +1,44 @@
+//GENERALES
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+/*Menu de navegacion*/
+
+.navBar__container {
+    grid-area: navBar__container;
+}
+
+.menuDeNavegacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+}
+
+.navBar .menuDeNavegacion li .subrayado:hover {
+    border-bottom: solid 2px white;
+}
+
+.navBar .menuDeNavegacion li a {
+    text-decoration: none;
+    flex-wrap: wrap;
+    color: white;
+    font-family: "Bungee";
+    font-size: 1.5rem;
+  }

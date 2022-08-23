@@ -8,29 +8,7 @@ body {
   padding: 0;
 }
 
-/*INDEX*/
-.index__container {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 0.4fr 0.6fr 2.7fr 0.3fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "index__margin___left navBar__container index__margin__right" "index__margin___left index__titulo__container index__margin__right" "index__margin___left index__main__container index__margin__right" "index__margin___left footer index__margin__right";
-}
-
-@media (max-width: 480px) {
-  .index__container {
-    display: grid;
-    grid-template-columns: 0.1fr 3fr 0.1fr;
-    grid-template-rows: 0.4fr 0.6fr 2.7fr 0.3fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "index__margin___left navBar__container index__margin__right" "index__margin___left index__titulo__container index__margin__right" "index__margin___left index__main__container index__margin__right" "index__margin___left footer index__margin__right";
-  }
-}
-/*Estilo Menu De Navegacion*/
+/*Menu de navegacion*/
 .navBar__container {
   grid-area: navBar__container;
 }
@@ -47,7 +25,6 @@ body {
   border-bottom: solid 2px white;
 }
 
-/*Estilo palabras menu*/
 .navBar .menuDeNavegacion li a {
   text-decoration: none;
   flex-wrap: wrap;
@@ -56,6 +33,81 @@ body {
   font-size: 1.5rem;
 }
 
+.index__container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 0.4fr 0.6fr 2.7fr 0.3fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "index__margin___left navBar__container index__margin__right" "index__margin___left index__titulo__container index__margin__right" "index__margin___left index__main__container index__margin__right" "index__margin___left footer index__margin__right";
+}
+
+.index__main__container {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 0.8fr;
+  grid-template-rows: 2fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "index__formulario__container index__formulario__container index__formulario__container" "index__main__texto index__main__texto index__main__texto";
+  grid-area: index__main__container;
+}
+
+.index__formulario__container {
+  grid-area: index__formulario__container;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "formulario__usuario__container" "botonNoRegistrarse__container";
+}
+
+/*Generales*/
+.logoMenuDeNavegacion__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.index__titulo__container {
+  grid-area: index__titulo__container;
+  text-align: center;
+}
+
+/*Formulario*/
+.formulario__usuario__container {
+  grid-area: formulario__usuario__container;
+  display: flex;
+  justify-content: center;
+}
+
+.botonNoRegistrarse__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index__titulo__container h1 {
+  font-size: 3rem;
+  color: white;
+  font-family: "Bungee";
+}
+
+.botonNoRegistrarse__container input {
+  background-color: black;
+  border: solid 2px white;
+  color: white;
+  font-family: "Bungee";
+}
+
+.botonNoRegistrarse__container input:hover {
+  background-color: white;
+  border: solid 2px black;
+  color: black;
+  font-family: "Bungee";
+}
+
+/*Logo menu de navegacion*/
 @media (max-width: 1024px) {
   .navBar .menuDeNavegacion li a {
     font-size: 1.1rem;
@@ -71,12 +123,6 @@ body {
     font-size: 0.7rem;
   }
 }
-/*Estilo Logo de Menu de Navegacion*/
-.logoMenuDeNavegacion__container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 @media (max-width: 1024px) {
   .logoMenuDeNavegacion__container a img {
     width: 100px;
@@ -95,18 +141,19 @@ body {
     height: 60px;
   }
 }
-/*Titulo Index*/
-.index__titulo__container {
-  grid-area: index__titulo__container;
-  text-align: center;
+/*Index*/
+@media (max-width: 480px) {
+  .index__container {
+    display: grid;
+    grid-template-columns: 0.1fr 3fr 0.1fr;
+    grid-template-rows: 0.4fr 0.6fr 2.7fr 0.3fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "index__margin___left navBar__container index__margin__right" "index__margin___left index__titulo__container index__margin__right" "index__margin___left index__main__container index__margin__right" "index__margin___left footer index__margin__right";
+  }
 }
-
-.index__titulo__container h1 {
-  font-size: 3rem;
-  color: white;
-  font-family: "Bungee";
-}
-
+/*Titulo principal*/
 @media (max-width: 1024px) {
   .index__titulo__container h1 {
     font-size: 2rem;
@@ -122,49 +169,7 @@ body {
     font-size: 1.5rem;
   }
 }
-/*Main Index*/
-.index__main__container {
-  display: grid;
-  grid-template-columns: 0.7fr 1.5fr 0.8fr;
-  grid-template-rows: 2fr 0.4fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "index__formulario__container index__formulario__container index__formulario__container" "index__main__texto index__main__texto index__main__texto";
-  grid-area: index__main__container;
-}
-
-.index__formulario__container {
-  grid-area: index__formulario__container;
-  display: flex;
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 0.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "formulario__usuario__container" "botonNoRegistrarse__container";
-}
-
-.formulario__usuario__container {
-  grid-area: formulario__usuario__container;
-  display: flex;
-  justify-content: center;
-}
-
-/*Botones Index*/
-.botonNoRegistrarse__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.botonNoRegistrarse__container input {
-  background-color: black;
-  border: solid 2px white;
-  color: white;
-  font-family: "Bungee";
-}
-
+/*Botones Ingreso*/
 @media (max-width: 1024px) {
   .botonNoRegistrarse__container input {
     font-size: 1rem;
@@ -180,13 +185,6 @@ body {
     font-size: 0.65rem;
   }
 }
-.botonNoRegistrarse__container input:hover {
-  background-color: white;
-  border: solid 2px black;
-  color: black;
-  font-family: "Bungee";
-}
-
 .texto__completarCamposRegistro {
   font-family: "Russo One";
 }

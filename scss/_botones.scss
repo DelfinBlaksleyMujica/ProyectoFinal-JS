@@ -1,0 +1,26 @@
+//INDEX
+
+
+.botonNoRegistrarse__container input {
+    background-color: black;
+    border: solid 2px white;
+    color: white;
+    font-family: "Bungee";
+}
+
+
+.botonNoRegistrarse__container input:hover {
+    background-color: white;
+    border: solid 2px black;
+    color: black;
+    font-family: "Bungee";
+}
+
+/*pseudo clase de botones de ingreso al catalogo*/
+
+.form__botones__container div input:hover {
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+    font-family: "Bungee";
+}

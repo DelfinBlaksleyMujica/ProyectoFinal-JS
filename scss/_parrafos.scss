@@ -1,0 +1,51 @@
+//INDEX_
+
+
+/*Formulario*/
+
+.texto__completarCamposRegistro {
+    font-family: "Russo One";
+  }
+
+/*estilo de texto label*/
+
+.box label {
+    color: white;
+    font-family: "Bungee";
+    font-size: 1.5rem;
+}
+
+
+/*estilo de texto dentro de los inputs*/
+
+.box input {
+    font-family: "Russo One";
+    background: linear-gradient(to left, silver, white);
+    border-radius: 5px;
+    width: 50%;
+    height: 3rem;
+    text-align: center;
+}
+
+
+/*Estilo de texto de botones*/
+
+.form__botones__container div input {
+    color: white;
+    font-family: "Bungee";
+}
+
+/*texto final del index*/
+
+.index__main__texto p {
+    font-family: "Russo One";
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*texto de los inputs del formulario de registro*/
+
+.swal-input {
+    font-family: "Russo One";
+
+}
