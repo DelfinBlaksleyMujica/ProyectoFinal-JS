@@ -151,7 +151,7 @@ const guardarLocal = (clave,valor) => {
 /*Funcion para vaciar el carrito una vez que el usuario finaliza con su compra*/
 
 function vaciarCarrito(carrito) {
-    if (validarDatos()) {
+    if ((nombreReceptor.value != "") && (emailReceptor.value != "") && (telefonoReceptor.value != "") && (domicilioReceptor.value != "" ) && (numeroDeTarjetaReceptor.value != "")) {
         carrito.splice(0, carrito.length);
         guardarLocal("Carrito de compra",JSON.stringify(carrito));
     }

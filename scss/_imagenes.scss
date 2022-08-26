@@ -1,0 +1,37 @@
+//MERCHANDISE 
+
+/*carrito logo*/
+
+.merchandise__carritoLogo {
+    width: 140px;
+    height: 80px;
+  }
+
+
+/*imagen de producto en card*/
+
+.card-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+  }
+
+
+  //CARRITO FINAL 
+
+
+  /*imagen de producto en el carrito final */
+
+  
+  .compraFinal__informacionProducto__container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+
+/*imagen del chip dentro de la tarjeta de credito*/
+
+.imagenChip__container img {
+  width: 40px;
+  height: 40px;
+}

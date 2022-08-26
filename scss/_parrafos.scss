@@ -49,3 +49,117 @@
     font-family: "Russo One";
 
 }
+
+
+//MERCHANDISE
+
+
+/*informacion dentro de las cards*/
+
+  
+.card-content {
+    font-family: "Bungee";
+    font-size: 1rem;
+}
+
+
+/*texto en el buscador*/
+
+#buscador {
+    width: 80%;
+    font-family: "Bungee";
+    border-radius: 10px;
+  }
+
+
+/*numeo del carrito de compras*/
+
+#iconCart {
+    color: black;
+    font-family: "Bungee";
+    font-size: 20px;
+    position: relative;
+  }
+
+/*texto de toastify de aviso de producto agregado al carrito*/
+
+.aviso__carritoDeCompras p {
+    font-family: "Russo One";
+  }
+  
+
+
+/*texto de toastify de agregado con exito al carrito*/
+
+.toastify {
+    color: black;
+    font-family: "Bungee";
+}
+
+
+//CARRITO FINAL
+
+
+/*texto de la informacion de los productos en carrito*/
+
+.carritoFinal__informacionTitulo__container li {
+    color: white;
+    font-family: "Bungee";
+    font-size: 2rem;
+}
+
+.compraFinal__informacionProducto__container li {
+    color: black;
+    font-weight: bolder;
+    font-family: "Russo One";
+    list-style-type: none;
+}
+
+
+/*numero de monto a pagar*/
+
+#carritoFinal__productosSubtotal__container div p {
+    color: black;
+    font-family: "Russo One";
+    color: white;
+    font-size: 1.5rem;
+}
+
+  /*Carrito Final Formulario de entrega*/
+
+  
+  .carritoFinal__informacionDeEntrega__container div h3 {
+    font-family: "Bungee";
+    color: white;
+    font-size: 2.5rem;
+  }
+
+
+  .carritoFinal__informacionDeEntrega__container div p {
+    font-family: "Russo One";
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+
+  /*label de escritura par el formulario final*/
+
+  .carritoFinal__informacionDeEntrega__container div label {
+    font-family: "Bungee";
+    color: white;
+  }
+
+
+  /*input de llenado para el formulario final*/
+
+  .carritoFinal__informacionDeEntrega__container div input {
+    font-family: "Russo One";
+  }
+
+/*texto despues del titulo de los datos de tarjeta de credito*/
+
+.tituloYSubtitulo__container p {
+  color: white;
+  font-family: "Russo One";
+  font-size: 1.5rem;
+}

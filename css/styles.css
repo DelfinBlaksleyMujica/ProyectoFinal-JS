@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%;
 }
@@ -33,6 +34,20 @@ body {
   font-size: 1.5rem;
 }
 
+.navBar {
+  grid-area: navBar;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.3fr;
+  gap: 0px 0px;
+  grid-template-areas: "logoMenuDeNavegacion__container" "menuDeNavegacion";
+}
+
+.logoMenuDeNavegacion__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .index__container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -63,10 +78,98 @@ body {
   grid-template-areas: "formulario__usuario__container" "botonNoRegistrarse__container";
 }
 
+.merchandise__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 0.1fr 6fr 0.2fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "navBar" "merchandise__title__container" "merchandise__main__container" "footer";
+}
+
+/*cards container*/
+.merchandise__main__container {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.3fr 5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "merchandise__main__margin1 merchandise__mainFilter__container merchandise__main__margin2" "merchandise__main__margin1 merchandise__cards__container merchandise__main__margin2";
+  grid-area: merchandise__main__container;
+}
+
+.carritoFinal__container {
+  display: grid;
+  grid-template-columns: 0.5fr 2.1fr 0.4fr;
+  grid-template-rows: 0.1fr 0.1fr 0.01fr 0.1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "carritoFinal__leftMargin navBar carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__titulo__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacion__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacionDeEntrega__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__pago__container carritoFinal__rightMargin";
+}
+
+/*informacion de productos en carrito*/
+.carritoFinal__informacion__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 0.3fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "carritoFinal__informacionTitulo__container carritoFinal__informacionTitulo__container carritoFinal__informacionTitulo__container" "carritoFinal__productosInfo__container carritoFinal__productosInfo__container carritoFinal__productosInfo__container" "carritoFinal__productosSubtotal__container carritoFinal__productosSubtotal__container carritoFinal__productosSubtotal__container";
+  grid-area: carritoFinal__informacion__container;
+}
+
+/*armado de container final para tarjeta y boton*/
+.carritoFinal__pago__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "carritoFinal__tarjeta__container" "carritoFinal__finalizarCompra__container";
+  grid-area: carritoFinal__pago__container;
+}
+
+.carritoFinal__tarjeta__container {
+  grid-area: carritoFinal__tarjeta__container;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "tituloYSubtitulo__container" "carritoFinal__datosDeTarjeta__container";
+}
+
+/*container de tarjeta de credito*/
+.tarjeta__finalizarCompra__container {
+  grid-area: tarjeta__finalizarCompra__container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "imagenChip__container imagenChip__container" "datosPersonayTarjeta__container datosFechasTarjeta__container";
+  background-color: greenyellow;
+  border-radius: 20px;
+  width: 40%;
+  height: 300px;
+  box-shadow: 0 0 10px #fff;
+}
+
 /*Generales*/
 .logoMenuDeNavegacion__container {
   display: flex;
   justify-content: space-evenly;
+}
+
+.menuDeNavegacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+  margin-left: -30px;
 }
 
 .index__titulo__container {
@@ -87,10 +190,398 @@ body {
   align-items: center;
 }
 
+/*Caja de card*/
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+/*container de botones para ingresar al catalogo*/
+.form__botones__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-left: 60px;
+}
+
+/*estilo del container del boton*/
+.form__botones__container div input {
+  background-color: black;
+  border: solid 2px white;
+}
+
+/*texto final del index*/
+.index__main__texto {
+  grid-area: index__main__texto;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+/*estilo del input del formulario de registro*/
+.swal-input {
+  margin-top: 10px;
+  background: linear-gradient(to left, silver, white);
+  border-radius: 10px;
+}
+
+/*contenedor de todo el formulario*/
+.swal2-popup {
+  width: 250px;
+  height: 400px;
+}
+
+.swal2-show {
+  border: 2px white solid;
+}
+
+/*margenes y footer*/
+.index__margin___left {
+  grid-area: index__margin___left;
+}
+
+.index__margin__right {
+  grid-area: index__margin__right;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*Titulo merchndise*/
+.merchandise__title__container {
+  grid-area: merchandise__title__container;
+  text-align: center;
+}
+
+/*cards main container*/
+#merchandise__cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: solid 2px white;
+}
+
+/*main del filtrado de productos con el search*/
+.merchandise__mainFilter__container {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*contenedor del filtrado*/
+.merchandise__mainFilter__container {
+  grid-area: merchandise__mainFilter__container;
+}
+
+/*card*/
+.card {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: greenyellow;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+/*informacion denrto de la card*/
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/*numero del carrito de compras posicion*/
+#iconCart span {
+  position: absolute;
+  top: 18%;
+  right: 39%;
+}
+
+/*contenedor del toastify de aviso de producto agregado al carrito*/
+.aviso__carritoDeCompras {
+  background-color: greenyellow;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: solid 5px black;
+}
+
+/*margenes del main*/
+.merchandise__main__margin1 {
+  grid-area: merchandise__main__margin1;
+}
+
+.merchandise__main__margin2 {
+  grid-area: merchandise__main__margin2;
+}
+
+/*titulo*/
+.carritoFinal__titulo__container {
+  grid-area: carritoFinal__titulo__container;
+}
+
+.carritoFinal__informacionTitulo__container {
+  grid-area: carritoFinal__informacionTitulo__container;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+/*contenedor de la zona de cards del carrito final*/
+.carritoFinal__container {
+  border-radius: 20px;
+}
+
+/*info productos en carrito*/
+#carritoFinal__productosInfo__container {
+  grid-area: carritoFinal__productosInfo__container;
+}
+
+.compraFinal__informacionProducto__container {
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*contenedor del total de dinero a pagar*/
+#carritoFinal__productosSubtotal__container {
+  grid-area: carritoFinal__productosSubtotal__container;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#carritoFinal__productosSubtotal__container div {
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+/*Carrito Final Formulario de entrega*/
+.carritoFinal__informacionDeEntrega__container {
+  grid-area: carritoFinal__informacionDeEntrega__container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carritoFinal__informacionDeEntrega__container div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*input del formulario final*/
+.carritoFinal__informacionDeEntrega__container div input {
+  color: black;
+  background: linear-gradient(to left, silver, white);
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*container del titulo y subtitulo de datos personales*/
+.tituloYSubtitulo__container {
+  grid-area: tituloYSubtitulo__container;
+  text-align: center;
+}
+
+/*acomodado tarjeta de credito en la pagina*/
+.carritoFinal__datosDeTarjeta__container {
+  display: flex;
+  justify-content: center;
+}
+
+/*acomodando la imagen del chip dentro de la tarjeta*/
+.imagenChip__container {
+  grid-area: imagenChip__container;
+  display: flex;
+}
+
+/*margenes*/
+.carritoFinal__leftMargin {
+  grid-area: carritoFinal__leftMargin;
+}
+
+.carritoFinal__rightMargin {
+  grid-area: carritoFinal__rightMargin;
+}
+
+/*titulo principal*/
 .index__titulo__container h1 {
   font-size: 3rem;
   color: white;
   font-family: "Bungee";
+}
+
+/*Titulo de formulario de registro*/
+#swal2-title {
+  color: black;
+  font-family: "Bungee";
+}
+
+.merchandise__title__container h1 {
+  color: white;
+  font-family: "Bungee";
+  font-size: 3rem;
+}
+
+/*titulo del taostify de avso de agregado de producto al carrito*/
+.aviso__carritoDeCompras h4 {
+  font-family: "Bungee";
+  font-weight: 300;
+}
+
+/*titulo y subtitulo de  datos de tarjeta*/
+.tituloYSubtitulo__container h2 {
+  color: white;
+  font-family: "Bungee";
+  font-size: 2.5rem;
+}
+
+/*Formulario*/
+.texto__completarCamposRegistro {
+  font-family: "Russo One";
+}
+
+/*estilo de texto label*/
+.box label {
+  color: white;
+  font-family: "Bungee";
+  font-size: 1.5rem;
+}
+
+/*estilo de texto dentro de los inputs*/
+.box input {
+  font-family: "Russo One";
+  background: linear-gradient(to left, silver, white);
+  border-radius: 5px;
+  width: 50%;
+  height: 3rem;
+  text-align: center;
+}
+
+/*Estilo de texto de botones*/
+.form__botones__container div input {
+  color: white;
+  font-family: "Bungee";
+}
+
+/*texto final del index*/
+.index__main__texto p {
+  font-family: "Russo One";
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*texto de los inputs del formulario de registro*/
+.swal-input {
+  font-family: "Russo One";
+}
+
+/*informacion dentro de las cards*/
+.card-content {
+  font-family: "Bungee";
+  font-size: 1rem;
+}
+
+/*texto en el buscador*/
+#buscador {
+  width: 80%;
+  font-family: "Bungee";
+  border-radius: 10px;
+}
+
+/*numeo del carrito de compras*/
+#iconCart {
+  color: black;
+  font-family: "Bungee";
+  font-size: 20px;
+  position: relative;
+}
+
+/*texto de toastify de aviso de producto agregado al carrito*/
+.aviso__carritoDeCompras p {
+  font-family: "Russo One";
+}
+
+/*texto de toastify de agregado con exito al carrito*/
+.toastify {
+  color: black;
+  font-family: "Bungee";
+}
+
+/*texto de la informacion de los productos en carrito*/
+.carritoFinal__informacionTitulo__container li {
+  color: white;
+  font-family: "Bungee";
+  font-size: 2rem;
+}
+
+.compraFinal__informacionProducto__container li {
+  color: black;
+  font-weight: bolder;
+  font-family: "Russo One";
+  list-style-type: none;
+}
+
+/*numero de monto a pagar*/
+#carritoFinal__productosSubtotal__container div p {
+  color: black;
+  font-family: "Russo One";
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*Carrito Final Formulario de entrega*/
+.carritoFinal__informacionDeEntrega__container div h3 {
+  font-family: "Bungee";
+  color: white;
+  font-size: 2.5rem;
+}
+
+.carritoFinal__informacionDeEntrega__container div p {
+  font-family: "Russo One";
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*label de escritura par el formulario final*/
+.carritoFinal__informacionDeEntrega__container div label {
+  font-family: "Bungee";
+  color: white;
+}
+
+/*input de llenado para el formulario final*/
+.carritoFinal__informacionDeEntrega__container div input {
+  font-family: "Russo One";
+}
+
+/*texto despues del titulo de los datos de tarjeta de credito*/
+.tituloYSubtitulo__container p {
+  color: white;
+  font-family: "Russo One";
+  font-size: 1.5rem;
 }
 
 .botonNoRegistrarse__container input {
@@ -105,6 +596,80 @@ body {
   border: solid 2px black;
   color: black;
   font-family: "Bungee";
+}
+
+/*pseudo clase de botones de ingreso al catalogo*/
+.form__botones__container div input:hover {
+  background-color: white;
+  color: black;
+  border: solid 2px black;
+  font-family: "Bungee";
+}
+
+/*boton comprar en las cards*/
+.btnComprar {
+  font-family: "Bungee";
+  background-color: black;
+  border: solid white 2px;
+  color: white;
+}
+
+.btnComprar:hover {
+  font-family: "Bungee";
+  background-color: white;
+  border: solid black 2px;
+  color: black;
+}
+
+/*boton eliminar*/
+.btnEliminar {
+  font-family: "Bungee";
+  background-color: black;
+  border: solid white 2px;
+  color: white;
+}
+
+.btnEliminar:hover {
+  font-family: "Bungee";
+  background-color: white;
+  border: solid black 2px;
+  color: black;
+}
+
+#carritoFinal__productosInfo__container div div {
+  margin-left: 190px;
+}
+
+/*acomodado de la imagen del chip dentro del container de la tarjeta*/
+.imagenChip__container img {
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+/*carrito logo*/
+.merchandise__carritoLogo {
+  width: 140px;
+  height: 80px;
+}
+
+/*imagen de producto en card*/
+.card-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+}
+
+/*imagen de producto en el carrito final */
+.compraFinal__informacionProducto__container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+/*imagen del chip dentro de la tarjeta de credito*/
+.imagenChip__container img {
+  width: 40px;
+  height: 40px;
 }
 
 /*Logo menu de navegacion*/
@@ -141,7 +706,6 @@ body {
     height: 60px;
   }
 }
-/*Index*/
 @media (max-width: 480px) {
   .index__container {
     display: grid;
@@ -185,29 +749,7 @@ body {
     font-size: 0.65rem;
   }
 }
-.texto__completarCamposRegistro {
-  font-family: "Russo One";
-}
-
-/*Formulario de ingreso-Index*/
-.index__formulario__container .formulario__usuario__container form {
-  width: 100%;
-}
-
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 30px;
-}
-
-.box label {
-  color: white;
-  font-family: "Bungee";
-  font-size: 1.5rem;
-}
-
+/*Label de los input del formulario*/
 @media (max-width: 1024px) {
   .box label {
     font-size: 1.3rem;
@@ -223,15 +765,7 @@ body {
     font-size: 0.9rem;
   }
 }
-.box input {
-  font-family: "Russo One";
-  background: linear-gradient(to left, silver, white);
-  border-radius: 5px;
-  width: 50%;
-  height: 3rem;
-  text-align: center;
-}
-
+/*input del formulario de ingreso de usuario*/
 @media (max-width: 1024px) {
   .box input {
     width: 45%;
@@ -251,20 +785,7 @@ body {
     font-size: 1rem;
   }
 }
-.form__botones__container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-  margin-left: 60px;
-}
-
-.form__botones__container div input {
-  background-color: black;
-  color: white;
-  border: solid 2px white;
-  font-family: "Bungee";
-}
-
+/*tamañano de letras del texto dentro de los inputs*/
 @media (max-width: 1024px) {
   .form__botones__container div input {
     font-size: 1rem;
@@ -280,27 +801,7 @@ body {
     font-size: 0.65rem;
   }
 }
-.form__botones__container div input:hover {
-  background-color: white;
-  color: black;
-  border: solid 2px black;
-  font-family: "Bungee";
-}
-
-/*texto del index*/
-.index__main__texto {
-  grid-area: index__main__texto;
-  display: flex;
-  width: 100%;
-  text-align: center;
-}
-
-.index__main__texto p {
-  font-family: "Russo One";
-  color: white;
-  font-size: 1.5rem;
-}
-
+/*tamañano texto final del index*/
 @media (max-width: 1024px) {
   .index__main__texto p {
     font-size: 1.3rem;
@@ -316,99 +817,7 @@ body {
     font-size: 0.9rem;
   }
 }
-/*Formulario de Registro-Index*/
-.swal-input {
-  font-family: "Russo One";
-  margin-top: 10px;
-  background: linear-gradient(to left, silver, white);
-  border-radius: 10px;
-}
-
-.swal2-popup {
-  width: 250px;
-  height: 400px;
-}
-
-.swal2-show {
-  border: 2px white solid;
-}
-
-#swal2-title {
-  color: black;
-  font-family: "Bungee";
-}
-
-.swal2-styled.swal2-confirm {
-  border: black;
-  border-radius: 0.25em;
-  background: initial;
-  background-color: white;
-  color: black;
-  font-size: 1em;
-}
-
-.index__margin___left {
-  grid-area: index__margin___left;
-}
-
-.index__margin__right {
-  grid-area: index__margin__right;
-}
-
-.footer {
-  grid-area: footer;
-}
-
-/*Carrito de Compras para Suscriptores*/
-.merchandise__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.1fr 6fr 0.2fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "navBar" "merchandise__title__container" "merchandise__main__container" "footer";
-}
-
-.navBar {
-  grid-area: navBar;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 0.3fr;
-  gap: 0px 0px;
-  grid-template-areas: "logoMenuDeNavegacion__container" "menuDeNavegacion";
-}
-
-.logoMenuDeNavegacion__container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/*Arreglos menu de navegacion del catalogo de suscriptores*/
-.menuDeNavegacion {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style-type: none;
-  align-items: center;
-}
-
-.menuDeNavegacion {
-  margin-left: -30px;
-}
-
-/*Titulo del catalogo de sucriptores*/
-.merchandise__title__container {
-  grid-area: merchandise__title__container;
-  text-align: center;
-}
-
-.merchandise__title__container h1 {
-  color: white;
-  font-family: "Bungee";
-  font-size: 3rem;
-}
-
+/*Titulo Principal*/
 @media (max-width: 1024px) {
   .merchandise__title__container h1 {
     font-size: 2rem;
@@ -424,30 +833,7 @@ body {
     font-size: 1.5rem;
   }
 }
-/*Catalogo de suscriptores-Cards, carrito y buscador*/
-.merchandise__main__container {
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-rows: 0.3fr 5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "merchandise__main__margin1 merchandise__mainFilter__container merchandise__main__margin2" "merchandise__main__margin1 merchandise__cards__container merchandise__main__margin2";
-  grid-area: merchandise__main__container;
-}
-
-.merchandise__mainFilter__container {
-  margin: 10px 0px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#buscador {
-  width: 80%;
-  font-family: "Bungee";
-  border-radius: 10px;
-}
-
+/*texto y container del buscador*/
 @media (max-width: 1000px) {
   #buscador {
     font-size: 1rem;
@@ -464,11 +850,7 @@ body {
     width: 100%;
   }
 }
-.merchandise__carritoLogo {
-  width: 140px;
-  height: 80px;
-}
-
+/*imagen de carrito*/
 @media (max-width: 1000px) {
   .merchandise__carritoLogo {
     width: 120px;
@@ -487,19 +869,7 @@ body {
     height: 50px;
   }
 }
-#iconCart {
-  color: black;
-  font-family: "Bungee";
-  font-size: 20px;
-  position: relative;
-}
-
-#iconCart span {
-  position: absolute;
-  top: 18%;
-  right: 39%;
-}
-
+/*acomodado del numero dentro del carrito*/
 @media (max-width: 1000px) {
   #iconCart span {
     top: 5%;
@@ -518,69 +888,13 @@ body {
     right: 32%;
   }
 }
-.carritoFinal__container {
-  border-radius: 20px;
-}
-
-/*Toastify de aviso en el catalogo de compra para suscriptores*/
-.aviso__carritoDeCompras {
-  background-color: greenyellow;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
-  border: solid 5px black;
-}
-
-.aviso__carritoDeCompras h4 {
-  font-family: "Bungee";
-  font-weight: 300;
-}
-
-.aviso__carritoDeCompras p {
-  font-family: "Russo One";
-}
-
-#btnEliminar {
-  font-family: "Bungee";
-  background-color: black;
-  border: solid white 2px;
-  color: white;
-}
-
-#btnEliminar:hover {
-  font-family: "Bungee";
-  background-color: white;
-  border: solid black 2px;
-  color: black;
-}
-
-/*Estilo de las cards dinamicas*/
-#merchandise__cards__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  border: solid 2px white;
-}
-
+/*Contentedor de cards-dinamicas*/
 @media (max-width: 580px) {
   #merchandise__cards__container {
     justify-content: center;
   }
 }
-.card {
-  width: 300px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: greenyellow;
-  border-radius: 20px;
-  margin: 15px;
-}
-
+/*card*/
 @media (max-width: 1000px) {
   .card {
     width: 200px;
@@ -599,12 +913,7 @@ body {
     height: 200px;
   }
 }
-.card-image img {
-  width: 200px;
-  height: 200px;
-  border-radius: 150px;
-}
-
+/*imagen de producto en las cards*/
 @media (max-width: 1000px) {
   .card-image img {
     width: 100px;
@@ -617,44 +926,66 @@ body {
     height: 70px;
   }
 }
-.card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  font-family: "Bungee";
-  font-size: 1rem;
-}
-
-/*Boton de cards*/
-.btnComprar {
-  font-family: "Bungee";
-  background-color: black;
-  border: solid white 2px;
-  color: white;
-}
-
+/*tamaño de letra en el boton comprar en las cards*/
 @media (max-width: 1000px) {
   .btnComprar {
     font-size: 1rem;
   }
 }
-.btnComprar:hover {
-  font-family: "Bungee";
-  background-color: white;
-  border: solid black 2px;
-  color: black;
+/*containers*/
+@media (max-width: 480px) {
+  .carritoFinal__container {
+    display: grid;
+    grid-template-columns: 0.1fr 2.1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.01fr 0.1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "carritoFinal__leftMargin navBar carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__titulo__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacion__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacionDeEntrega__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__pago__container carritoFinal__rightMargin";
+  }
 }
-
-/*Boton Eliminar de cards del carrito final*/
-.btnEliminar {
-  font-family: "Bungee";
-  background-color: black;
-  border: solid white 2px;
+/*texto de la informacion de los productos en carrito*/
+.carritoFinal__informacionTitulo__container li {
   color: white;
+  font-family: "Bungee";
+  font-size: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .carritoFinal__informacionTitulo__container li {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .carritoFinal__informacionTitulo__container li {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .compraFinal__informacionProducto__container li {
+    font-size: 0.8rem;
+  }
+}
+/*imagen de producto en carrito de compras*/
+@media (max-width: 1024px) {
+  .compraFinal__informacionProducto__container img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .compraFinal__informacionProducto__container img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .compraFinal__informacionProducto__container img {
+    width: 40px;
+    height: 40px;
+  }
+}
+/*tamaño de letra en el boton eliminar de los productos en carrito*/
 @media (max-width: 950px) {
   .btnEliminar {
     font-size: 1.2rem;
@@ -675,182 +1006,7 @@ body {
     font-size: 0.6rem;
   }
 }
-.btnEliminar:hover {
-  font-family: "Bungee";
-  background-color: white;
-  border: solid black 2px;
-  color: black;
-}
-
-/*Estilo texto del toastify de aviso*/
-.toastify {
-  color: black;
-  font-family: "Bungee";
-}
-
-.toast-close {
-  color: black;
-}
-
-.merchandise__main__margin1 {
-  grid-area: merchandise__main__margin1;
-}
-
-.merchandise__main__margin2 {
-  grid-area: merchandise__main__margin2;
-}
-
-.merchandise__mainFilter__container {
-  grid-area: merchandise__mainFilter__container;
-}
-
-/*CARRITO FINAL DE COMPRAS*/
-.carritoFinal__container {
-  display: grid;
-  grid-template-columns: 0.5fr 2.1fr 0.4fr;
-  grid-template-rows: 0.1fr 0.1fr 0.01fr 0.1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "carritoFinal__leftMargin navBar carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__titulo__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacion__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacionDeEntrega__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__pago__container carritoFinal__rightMargin";
-}
-
-@media (max-width: 480px) {
-  .carritoFinal__container {
-    display: grid;
-    grid-template-columns: 0.1fr 2.1fr 0.1fr;
-    grid-template-rows: 0.1fr 0.1fr 0.01fr 0.1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "carritoFinal__leftMargin navBar carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__titulo__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacion__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__informacionDeEntrega__container carritoFinal__rightMargin" "carritoFinal__leftMargin carritoFinal__pago__container carritoFinal__rightMargin";
-  }
-}
-.navBar {
-  grid-area: navBar;
-}
-
-.carritoFinal__leftMargin {
-  grid-area: carritoFinal__leftMargin;
-}
-
-.carritoFinal__rightMargin {
-  grid-area: carritoFinal__rightMargin;
-}
-
-/*Titulo de carrito final*/
-.carritoFinal__titulo__container {
-  grid-area: carritoFinal__titulo__container;
-}
-
-/*Informacion de productos en carrito*/
-.carritoFinal__informacion__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 0.3fr 0.1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "carritoFinal__informacionTitulo__container carritoFinal__informacionTitulo__container carritoFinal__informacionTitulo__container" "carritoFinal__productosInfo__container carritoFinal__productosInfo__container carritoFinal__productosInfo__container" "carritoFinal__productosSubtotal__container carritoFinal__productosSubtotal__container carritoFinal__productosSubtotal__container";
-  grid-area: carritoFinal__informacion__container;
-}
-
-.carritoFinal__informacionTitulo__container {
-  grid-area: carritoFinal__informacionTitulo__container;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  list-style-type: none;
-}
-
-/*estilo titulos de lista del carrito final*/
-.carritoFinal__informacionTitulo__container li {
-  color: white;
-  font-family: "Bungee";
-  font-size: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .carritoFinal__informacionTitulo__container li {
-    font-size: 1.3rem;
-  }
-}
-@media (max-width: 768px) {
-  .carritoFinal__informacionTitulo__container li {
-    font-size: 1rem;
-  }
-}
-/*Esitlo de los contenedores con los productos en el carrito final*/
-#carritoFinal__productosInfo__container {
-  grid-area: carritoFinal__productosInfo__container;
-}
-
-#carritoFinal__productosInfo__container div div {
-  margin-left: 190px;
-}
-
-.compraFinal__informacionProducto__container {
-  background-color: yellowgreen;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.compraFinal__informacionProducto__container li {
-  color: black;
-  font-weight: bolder;
-  font-family: "Russo One";
-  list-style-type: none;
-}
-
-@media (max-width: 600px) {
-  .compraFinal__informacionProducto__container li {
-    font-size: 0.8rem;
-  }
-}
-.compraFinal__informacionProducto__container img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-}
-
-@media (max-width: 1024px) {
-  .compraFinal__informacionProducto__container img {
-    width: 70px;
-    height: 70px;
-  }
-}
-@media (max-width: 768px) {
-  .compraFinal__informacionProducto__container img {
-    width: 50px;
-    height: 50px;
-  }
-}
-@media (max-width: 480px) {
-  .compraFinal__informacionProducto__container img {
-    width: 40px;
-    height: 40px;
-  }
-}
-/*Estilo subtotal de carrito de compras*/
-#carritoFinal__productosSubtotal__container {
-  grid-area: carritoFinal__productosSubtotal__container;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#carritoFinal__productosSubtotal__container div {
-  border: solid 2px white;
-  border-radius: 5px;
-}
-
-#carritoFinal__productosSubtotal__container div p {
-  color: black;
-  font-family: "Russo One";
-  color: white;
-  font-size: 1.5rem;
-}
-
+/*tamaño de letra del monto a pagar*/
 @media (max-width: 1024px) {
   #carritoFinal__productosSubtotal__container div p {
     font-size: 1.2rem;
@@ -862,28 +1018,6 @@ body {
   }
 }
 /*Carrito Final Formulario de entrega*/
-.carritoFinal__informacionDeEntrega__container {
-  grid-area: carritoFinal__informacionDeEntrega__container;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carritoFinal__informacionDeEntrega__container div {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.carritoFinal__informacionDeEntrega__container div h3 {
-  font-family: "Bungee";
-  color: white;
-  font-size: 2.5rem;
-}
-
 @media (max-width: 1024px) {
   .carritoFinal__informacionDeEntrega__container div h3 {
     font-size: 2.2rem;
@@ -894,12 +1028,7 @@ body {
     font-size: 2rem;
   }
 }
-.carritoFinal__informacionDeEntrega__container div p {
-  font-family: "Russo One";
-  color: white;
-  font-size: 1.5rem;
-}
-
+/*tamaño de letra del parrafo del formulario de entrega*/
 @media (max-width: 1024px) {
   .carritoFinal__informacionDeEntrega__container div p {
     font-size: 1.2rem;
@@ -910,70 +1039,7 @@ body {
     font-size: 1rem;
   }
 }
-.carritoFinal__informacionDeEntrega__container div label {
-  font-family: "Bungee";
-  color: white;
-}
-
-.carritoFinal__informacionDeEntrega__container div input {
-  font-family: "Russo One";
-  color: black;
-  background: linear-gradient(to left, silver, white);
-  width: 80%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  outline: none;
-  height: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/*Carrito Final datos de pago*/
-.carritoFinal__pago__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "carritoFinal__tarjeta__container" "carritoFinal__finalizarCompra__container";
-  grid-area: carritoFinal__pago__container;
-}
-
-.carritoFinal__tarjeta__container {
-  grid-area: carritoFinal__tarjeta__container;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 0.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "tituloYSubtitulo__container" "carritoFinal__datosDeTarjeta__container";
-}
-
-.tituloYSubtitulo__container {
-  grid-area: tituloYSubtitulo__container;
-  text-align: center;
-}
-
-.carritoFinal__datosDeTarjeta__container {
-  display: flex;
-  justify-content: center;
-}
-
-.tarjeta__finalizarCompra__container {
-  grid-area: tarjeta__finalizarCompra__container;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "imagenChip__container imagenChip__container" "datosPersonayTarjeta__container datosFechasTarjeta__container";
-  background-color: greenyellow;
-  border-radius: 20px;
-  width: 40%;
-  height: 300px;
-  box-shadow: 0 0 10px #fff;
-}
-
+/*container de tarjeta de credito*/
 @media (max-width: 1300px) {
   .tarjeta__finalizarCompra__container {
     width: 50%;
@@ -998,12 +1064,7 @@ body {
     height: 230px;
   }
 }
-.tituloYSubtitulo__container h2 {
-  color: white;
-  font-family: "Bungee";
-  font-size: 2.5rem;
-}
-
+/*titulo de datos de la tarjeta*/
 @media (max-width: 1024px) {
   .tituloYSubtitulo__container h2 {
     font-size: 2.2rem;
@@ -1014,12 +1075,7 @@ body {
     font-size: 2rem;
   }
 }
-.tituloYSubtitulo__container p {
-  color: white;
-  font-family: "Russo One";
-  font-size: 1.5rem;
-}
-
+/*texto despeus del titulo de la tarjeta de credito*/
 @media (max-width: 1024px) {
   .tituloYSubtitulo__container p {
     font-size: 1.2rem;
@@ -1030,18 +1086,6 @@ body {
     font-size: 1rem;
   }
 }
-.imagenChip__container {
-  grid-area: imagenChip__container;
-  display: flex;
-}
-
-.imagenChip__container img {
-  margin-top: 20px;
-  padding-left: 40px;
-  width: 40px;
-  height: 40px;
-}
-
 .datosPersonayTarjeta__container {
   grid-area: datosPersonayTarjeta__container;
   display: flex;
